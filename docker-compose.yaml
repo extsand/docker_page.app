@@ -9,7 +9,7 @@ services:
     image: mariadb
     restart: always
     environment: 
-      MYSQL_ROOT_PASSWORD=12345
+      MYSQL_ROOT_PASSWORD: 12345
     volumes:
       - ./database:/var/lib/mysql
 
