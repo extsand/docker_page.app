@@ -4,6 +4,8 @@ services:
   app:
     build: ./docker.page
     restart: always
+    ports:
+      - 9999:80
   
   db:
     image: mariadb
