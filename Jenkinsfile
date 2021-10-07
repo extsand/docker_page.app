@@ -91,7 +91,7 @@ pipeline {
 											cleanRemote: false, 
 											excludes: '', 
 											// execCommand: '''docker-compose build; docker-compose up -d''', 
-											execCommand: '''cd /home/alpha/docker_workfolder; docker-compose build; sudo docker-compose up -d''', 
+											execCommand: '''cd /home/alpha/docker_workfolder; docker-compose build; docker-compose up ''', 
 											execTimeout: 120000, 
 											flatten: false, 
 											makeEmptyDirs: false, 
