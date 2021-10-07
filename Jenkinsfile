@@ -8,16 +8,16 @@ pipeline {
 		// chek git repo every minute
     triggers {
 			// every 1 minute
-			// pollSCM('* * * * *')
+			pollSCM('* * * * *')
 			// every 10 sec
-			pullSCM('*/0.5 * * * *')
+			// pullSCM('*/0.5 * * * *')
 		}
 
     environment {
         PROJECT = "docker.page"
         DESCRIPTIONS = "GitHub -> Jenkins -> Docker -> -> AWS"
         OWNER = "extsand"
-        GIT_REPO = "https://github.com/extsand/page.app.git"  
+        GIT_REPO = "https://github.com/extsand/docker_page.app.git"  
 				DOCKER_HUB_IMAGE_NAME = "extsand/academy_docker.page:latest"
     } 
 
@@ -32,7 +32,7 @@ pipeline {
     stages {
         stage('Introducting') {
             steps {
-                echo '''Hello User!\n It is ${PROJECT} project. We will use pipeline ${DESCRIPTIONS}. You can see files in ${GIT_REPO}.'''
+                echo '''Hello User!\n It is ${PROJECT} project.\n We will use pipeline ${DESCRIPTIONS}.\n You can see files in ${GIT_REPO}.'''
             }
         }
 
