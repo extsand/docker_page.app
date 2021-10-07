@@ -91,7 +91,7 @@ pipeline {
 											cleanRemote: false, 
 											excludes: '', 
 											// execCommand: '''docker-compose build; docker-compose up -d''', 
-											execCommand: '''cd /home/alpha/docker_workfolder; docker-compose build; docker-compose up ''', 
+											execCommand: '''cd /home/alpha/docker_workfolder; docker-compose build; docker-compose up -d''', 
 											// execCommand: '''whoami; id ; who ''', 
 											execTimeout: 1200000, 
 											flatten: false, 
