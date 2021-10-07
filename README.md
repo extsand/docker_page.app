@@ -1,2 +1,4 @@
 # page.app
-welcome to docker
+
+Example web app.
+Include docker, docker-compose

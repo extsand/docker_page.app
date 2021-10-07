@@ -1,0 +1,25 @@
+version: '3.1'
+
+service:
+  app:
+    build: ./docker.page
+    restart: always
+  
+  db:
+    image: mariadb
+    restart: always
+    environment: 
+      MYSQL_ROOT_PASSWORD=12345
+    volumes:
+      - ./database:/var/lib/mysql
+
+  adminer:
+    image: adminer
+    restart: always
+    port:
+      - 9090:8080
+    depends_on:
+      - db
+
+
+    
