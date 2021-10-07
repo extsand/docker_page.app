@@ -112,6 +112,23 @@ pipeline {
 					}
 				}
 
+				stage(''){
+					steps{
+						sshPublisher(publishers: [sshPublisherDesc(configName: 'VM_192.168.1.6', transfers: [
+							sshTransfer(cleanRemote: false, excludes: '', execCommand: '', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'docker-compose.yaml'), 
+												
+						sshTransfer(cleanRemote: false, excludes: '', 
+													execCommand: '''sudo docker-compose build
+													sudo docker-compose up ''', 
+													execTimeout: 120000, 
+													flatten: false, 
+													makeEmptyDirs: false, 
+													noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'docker-compose.yaml')
+], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+					}
+				}
+
+
 
 
 
