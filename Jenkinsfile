@@ -90,8 +90,7 @@ pipeline {
 										sshTransfer(
 											cleanRemote: false, 
 											excludes: '', 
-											execCommand: '''sudo docker-compose build 
-																			sudo docker-compose up''', 
+											execCommand: '''sudo docker-compose build; sudo docker-compose up''', 
 											execTimeout: 120000, 
 											flatten: false, 
 											makeEmptyDirs: false, 
