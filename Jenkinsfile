@@ -90,7 +90,7 @@ pipeline {
 										sshTransfer(
 											cleanRemote: false, 
 											excludes: '', 
-											execCommand: '''docker-compose build; docker-compose up''', 
+											execCommand: '''touch ebat.txt''', 
 											execTimeout: 120000, 
 											flatten: false, 
 											makeEmptyDirs: false, 
@@ -108,6 +108,7 @@ pipeline {
 								)
 							]
 						)
+						
 
 					}
 				}
