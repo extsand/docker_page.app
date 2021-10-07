@@ -93,7 +93,7 @@ pipeline {
 											// execCommand: '''docker-compose build; docker-compose up -d''', 
 											execCommand: '''cd /home/alpha/docker_workfolder; docker-compose build; docker-compose up ''', 
 											// execCommand: '''whoami; id ; who ''', 
-											execTimeout: 120000, 
+											execTimeout: 1200000, 
 											flatten: false, 
 											makeEmptyDirs: false, 
 											noDefaultExcludes: false, 
