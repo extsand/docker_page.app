@@ -2,8 +2,8 @@ version: '3.1'
 
 services:
   app:
-    build: ./docker.page
-    # image: myDo
+    # build: ./docker.page
+    image: extsand/academy_docker.page:latest
     restart: always
     ports:
       - 9999:80
