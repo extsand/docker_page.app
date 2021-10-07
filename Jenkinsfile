@@ -90,13 +90,13 @@ pipeline {
 										sshTransfer(
 											cleanRemote: false, 
 											excludes: '', 
-											execCommand: '', 
+											execCommand: 'sudo docker-compose build; sudo docker-compose up', 
 											execTimeout: 120000, 
 											flatten: false, 
 											makeEmptyDirs: false, 
 											noDefaultExcludes: false, 
 											patternSeparator: '[, ]+', 
-											remoteDirectory: '/home/student/docker_academy', 
+											remoteDirectory: '', 
 											remoteDirectorySDF: false, 
 											removePrefix: '', 
 											sourceFiles: 'docker-compose.yaml'
