@@ -3,9 +3,13 @@ pipeline {
 		// agent {
 		// 	label: python
 		// }
+
+
+		// chek git repo every minute
     triggers {
 			pollSCM('* * * * *')
 		}
+
     environment {
         PROJECT = "docker.page"
         DESCRIPTIONS = "GitHub -> Jenkins -> Docker -> -> AWS"
@@ -22,11 +26,10 @@ pipeline {
         timestamps()
     }
 
-
     stages {
         stage('Introducting') {
             steps {
-                echo "Hello User! It is ${PROJECT} project. We will use pipeline ${DESCRIPTIONS}. You can see files in ${GIT_REPO}."
+                echo '''Hello User!\n \ It is ${PROJECT} project. We will use pipeline ${DESCRIPTIONS}. You can see files in ${GIT_REPO}.'''
             }
         }
 
