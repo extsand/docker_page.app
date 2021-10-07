@@ -38,6 +38,7 @@ pipeline {
 
 				stage('Clone Git Repository'){
 					steps {
+						echo '======== Clone app from git Repository ============='
 						echo "Get app files from ${GIT_REPO}"
 						git branch: 'main', 
 						credentialsId: 'extsand_git_credentials', 
@@ -70,10 +71,44 @@ pipeline {
 						}
 					}
 				}
+
 				stage('Publish docker image'){
 					steps {
-						echo '===========Push Docker image to DockerHub ============'
+						echo '=========== Push Docker image to DockerHub ============'
 						sh 'docker push $DOCKER_HUB_IMAGE_NAME'
+					}
+				}
+
+				stage('Upload docker to Local server'){
+					steps {
+						echo '=========== Set Docker image in local server ============'
+						sshPublisher(
+							publishers: [
+								sshPublisherDesc(
+									configName: 'vm_192.168.1.6', 
+									transfers: [
+										sshTransfer(
+											cleanRemote: false, 
+											excludes: '', 
+											execCommand: '', 
+											execTimeout: 120000, 
+											flatten: false, 
+											makeEmptyDirs: false, 
+											noDefaultExcludes: false, 
+											patternSeparator: '[, ]+', 
+											remoteDirectory: '/home/student/docker_academy', 
+											remoteDirectorySDF: false, 
+											removePrefix: '', 
+											sourceFiles: 'docker-compose.yaml'
+										)
+									], 
+									usePromotionTimestamp: false, 
+									useWorkspaceInPromotion: false, 
+									verbose: false
+								)
+							]
+						)
+
 					}
 				}
 
