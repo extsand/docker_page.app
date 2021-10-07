@@ -32,7 +32,7 @@ pipeline {
     stages {
         stage('Introducting') {
             steps {
-                echo '''Hello User!\n It is ${PROJECT} project.\n We will use pipeline ${DESCRIPTIONS}.\n You can see files in ${GIT_REPO}.'''
+                echo "Hello User!\n It is ${PROJECT} project.\n We will use pipeline ${DESCRIPTIONS}.\n You can see files in ${GIT_REPO}."
             }
         }
 
