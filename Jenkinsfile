@@ -26,10 +26,7 @@ pipeline {
     stages {
         stage('Introducting') {
             steps {
-                printf "Hello User!
-												It is ${PROJECT} project. 
-											   We will use pipeline ${DESCRIPTIONS} .
-												 You can see files in ${GIT_REPO} ."
+                echo "Hello User! It is ${PROJECT} project. We will use pipeline ${DESCRIPTIONS}. You can see files in ${GIT_REPO}."
             }
         }
 
