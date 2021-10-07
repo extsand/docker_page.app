@@ -3,6 +3,7 @@ version: '3.1'
 services:
   app:
     build: ./docker.page
+    # image: myDo
     restart: always
     ports:
       - 9999:80
