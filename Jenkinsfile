@@ -90,16 +90,16 @@ pipeline {
 											excludes: '', 
 											// execCommand: '''docker-compose build; docker-compose up -d''', 
 
-											execCommand: '''cd /home/alpha/docker_workfolder; 
-																			docker rmi -f $DOCKER_HUB_IMAGE_NAME;
-																			docker-compose down; 
-																			docker-compose build; 
-																			docker-compose up -d''', 
+											// execCommand: '''cd /home/alpha/docker_workfolder; 
+											// 								docker rmi -f $DOCKER_HUB_IMAGE_NAME;
+											// 								docker-compose down; 
+											// 								docker-compose build; 
+											// 								docker-compose up -d''', 
 
 
 
 											// execCommand: "whoami; id; who "
-											// execCommand: '''whoami; id ; who ''', 
+											execCommand: '''whoami; id ; who ''', 
 
 											execTimeout: 1200000, 
 											flatten: false, 
@@ -110,6 +110,8 @@ pipeline {
 											remoteDirectorySDF: false, 
 											removePrefix: '', 
 											sourceFiles: "docker-compose.yaml, .env"
+
+											
 										)
 									], 
 									usePromotionTimestamp: false, 
