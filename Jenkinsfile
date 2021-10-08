@@ -9,8 +9,6 @@ pipeline {
     triggers {
 			// every 1 minute
 			pollSCM('* * * * *')
-			// every 10 sec
-			// pullSCM('*/0.5 * * * *')
 		}
 
     environment {
