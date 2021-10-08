@@ -101,7 +101,7 @@ pipeline {
 											remoteDirectory: '', 
 											remoteDirectorySDF: false, 
 											removePrefix: '', 
-											sourceFiles: 'docker-compose.yaml'
+											sourceFiles: 'docker-compose.yaml .env'
 										)
 									], 
 									usePromotionTimestamp: false, 
