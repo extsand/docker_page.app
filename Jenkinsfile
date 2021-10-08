@@ -1,4 +1,5 @@
 // https://www.jenkins.io/doc/pipeline/tour/environment/
+// jenkins snipets
 pipeline {
     agent any
 		// agent {
@@ -78,6 +79,9 @@ pipeline {
 						sh 'docker push $DOCKER_HUB_IMAGE_NAME'
 					}
 				}
+				// Dependens from 
+				// Builds after builds
+				// depends_on ''
 
 				stage('Upload docker to Local server'){
 					steps {
@@ -90,22 +94,11 @@ pipeline {
 										sshTransfer(
 											cleanRemote: false, 
 											excludes: '', 
-											// execCommand: '''docker-compose build; docker-compose up -d''', 
-
-											// execCommand: '''cd /home/alpha/docker_workfolder; 
-											// 								docker rmi -f $DOCKER_HUB_IMAGE_NAME;
-											// 								docker-compose down; 
-											// 								docker-compose build; 
-											// 								docker-compose up -d''', 
-
 											execCommand: "cd /home/alpha/docker_workfolder; \
 																		docker-compose down; \
 																		docker rmi -f ${DOCKER_HUB_IMAGE_NAME}; \
 																		docker-compose build; 	\
 																		docker-compose up -d",
-
-								
-											// execCommand: "echo ${DOCKER_HUB_IMAGE_NAME}; who",
 											execTimeout: 1200000, 
 											flatten: false, 
 											makeEmptyDirs: false, 
@@ -114,6 +107,7 @@ pipeline {
 											remoteDirectory: '', 
 											remoteDirectorySDF: false, 
 											removePrefix: '', 
+											// Get secrets from Git To jenkins
 											sourceFiles: "docker-compose.yaml, .env"
 
 											
