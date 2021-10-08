@@ -74,8 +74,7 @@ pipeline {
 				stage('Publish docker image'){
 					steps {
 						echo '=========== Push Docker image to DockerHub ============'
-						// Uncoment to PUSH
-						// sh 'docker push $DOCKER_HUB_IMAGE_NAME'
+						sh 'docker push $DOCKER_HUB_IMAGE_NAME'
 					}
 				}
 
