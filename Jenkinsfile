@@ -97,7 +97,11 @@ pipeline {
 											// 								docker-compose build; 
 											// 								docker-compose up -d''', 
 
-											execCommand: "cd /home/alpha/docker_workfolder; docker-compose down; docker rmi -f ${DOCKER_HUB_IMAGE_NAME}; docker-compose build; 	docker-compose up -d",
+											execCommand: "cd /home/alpha/docker_workfolder; \
+																		docker-compose down; \
+																		docker rmi -f ${DOCKER_HUB_IMAGE_NAME}; \
+																		docker-compose build; 	\
+																		docker-compose up -d",
 
 								
 											// execCommand: "echo ${DOCKER_HUB_IMAGE_NAME}; who",
