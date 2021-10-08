@@ -10,7 +10,7 @@ pipeline {
     triggers {
 			// every 1 minute
 			// pollSCM('H/2 * * * *')
-			pollSCM( * * * * *)
+			pollSCM( '* * * * *')
 		}
 
     environment {
