@@ -98,11 +98,10 @@ pipeline {
 											// 								docker-compose build; 
 											// 								docker-compose up -d''', 
 
+											execCommand: "cd /home/alpha/docker_workfolder; docker rmi -f ${DOCKER_HUB_IMAGE_NAME}; docker-compose down; docker-compose build; 	docker-compose up -d"
 
-
-											// execCommand: "whoami; id; who "
-											// execCommand: 'whoami; echo "${DOCKER_HUB_IMAGE_NAME}"; echo "$DOCKER_HUB_IMAGE_NAME"', 
-											execCommand: "echo ${DOCKER_HUB_IMAGE_NAME}; who",
+								
+											// execCommand: "echo ${DOCKER_HUB_IMAGE_NAME}; who",
 											execTimeout: 1200000, 
 											flatten: false, 
 											makeEmptyDirs: false, 
