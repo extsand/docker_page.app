@@ -94,7 +94,7 @@ pipeline {
 											// 								docker-compose down; 
 											// 								docker-compose build; 
 											// 								docker-compose up -d''', 
-											execCommand: "whoami; id; who"
+											execCommand: "whoami; id; who "
 											// execCommand: '''whoami; id ; who ''', 
 											execTimeout: 1200000, 
 											flatten: false, 
