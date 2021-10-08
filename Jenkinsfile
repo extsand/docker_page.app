@@ -8,7 +8,7 @@ pipeline {
 		// chek git repo every minute
     triggers {
 			// every 1 minute
-			pollSCM('* * * * *')
+			pollSCM('H/2 * * * *')
 		}
 
     environment {
@@ -99,7 +99,7 @@ pipeline {
 
 
 											// execCommand: "whoami; id; who "
-											execCommand: '''whoami; id ; who ''', 
+											// execCommand: '''whoami; id ; who ''', 
 
 											execTimeout: 1200000, 
 											flatten: false, 
