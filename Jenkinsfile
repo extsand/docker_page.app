@@ -9,7 +9,8 @@ pipeline {
 		// chek git repo every minute
     triggers {
 			// every 1 minute
-			pollSCM('H/2 * * * *')
+			// pollSCM('H/2 * * * *')
+			pollSCM( * * * * *)
 		}
 
     environment {
