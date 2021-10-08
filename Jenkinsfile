@@ -85,7 +85,7 @@ pipeline {
 						sshPublisher(
 							publishers: [
 								sshPublisherDesc(
-									configName: 'VM_192.168.1.6', 
+									configName: 'VM_192.168.1.8', 
 									transfers: [
 										sshTransfer(
 											cleanRemote: false, 
