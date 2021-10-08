@@ -91,7 +91,7 @@ pipeline {
 											// execCommand: '''docker-compose build; docker-compose up -d''', 
 
 											execCommand: '''cd /home/alpha/docker_workfolder; 
-																			docker rmi -f $DOCKER_HUB_IMAGE_NAME
+																			docker rmi -f $DOCKER_HUB_IMAGE_NAME;
 																			docker-compose down; 
 																			docker-compose build; 
 																			docker-compose up -d''', 
