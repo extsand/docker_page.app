@@ -58,7 +58,7 @@ html, body {
 	height: auto;
 }
 .title {
-	font-size: 10rem;
+	font-size: 9rem;
 	font-weight: 800;
 	color: #fff
 }
@@ -74,7 +74,7 @@ html, body {
 	text-align: center;
 	max-width: 45rem;
 	color: #fff;
-	font-size: 2rem;
+	font-size: 1.8rem;
 	letter-spacing: 1px;
 	line-height: 2.3rem;
 }
@@ -91,6 +91,7 @@ html, body {
 	border-radius: 1rem;
 	border: 2px solid #fff;
 	transition: all 0.4s ease-in-out;
+	cursor: pointer;
 }
 
 .link:hover{
@@ -98,4 +99,7 @@ html, body {
 	color:#2496ED;
 	background-color: #fff;
 }
+
+
+
 
