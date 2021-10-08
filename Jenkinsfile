@@ -101,8 +101,8 @@ pipeline {
 
 
 											// execCommand: "whoami; id; who "
-											execCommand: 'whoami; echo "${DOCKER_HUB_IMAGE_NAME}"; echo "$DOCKER_HUB_IMAGE_NAME"', 
-
+											// execCommand: 'whoami; echo "${DOCKER_HUB_IMAGE_NAME}"; echo "$DOCKER_HUB_IMAGE_NAME"', 
+											execCommand: sh 'echo $DOCKER_HUB_IMAGE_NAME'
 											execTimeout: 1200000, 
 											flatten: false, 
 											makeEmptyDirs: false, 
